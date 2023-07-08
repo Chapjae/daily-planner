@@ -68,7 +68,20 @@ $(function () {
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  localStorage.getItem(taskKey, tasks)
+  // 
+  //   var hourTask = $(`#hour-${i}`).attr("id")
+  //   var storedTask  = localStorage.getItem(hourTask)
+  //   hourTask.children(".description").val(storedTask)
+  //   debugger
+  // }
+  for(var i = 9; i < 18; i++) {
+  var testTask = localStorage.getItem(`hour-${i}`)
+  var testHour = $(`#hour-${i}`).children(".description")
+
+  testHour.append(testTask)
+
+  }
+
   // 1. getItem for localStorage to pull previously stored content
   // localStorage.getItem("keyname")  
   //    a. seperate key in localStorage for each hour
