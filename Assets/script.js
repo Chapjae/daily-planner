@@ -1,3 +1,4 @@
+currentHour = dayjs().format("h")
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
@@ -18,8 +19,9 @@ $(function () {
   //        }) 
   $(".saveBtn").on("click", function (){
     var tasks = $(this).siblings(".description").val()
-    console.log($(this).siblings())
-    localStorage.setItem("#hour", tasks)
+    var taskKey = $(this).parent().attr("id")
+    // console.log($(this).parent())
+    localStorage.setItem(taskKey, tasks)
   })
   //First
   // TODO: Add code to apply the past, present, or future class to each time
@@ -31,8 +33,8 @@ $(function () {
   // 1) document.querySelectorAll(".time-block ")
   //  Must use jquery ->  can use jquery.children to select child elements 
   for(var i = 9; i < 18; i++){
-    var textarea=$("#hour-"+i).children("textarea") 
-    if(currentHour===i) {
+    var textarea=$(`#hour-${i}`) 
+    if (currentHour==i) {
       textarea.addClass("present");
     } else if(currentHour > i){
       textarea.addClass("past");
@@ -66,7 +68,7 @@ $(function () {
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  
+  localStorage.getItem(taskKey, tasks)
   // 1. getItem for localStorage to pull previously stored content
   // localStorage.getItem("keyname")  
   //    a. seperate key in localStorage for each hour
@@ -77,7 +79,6 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
   // 1. create var day = dayjs() to get current date (add time for extra credit)
-  // $("#currentDay").text(dayjs().format("MMM DD,YYYY,  h:mm:ss"));
-// 
+ 
 });
 $("#currentDay").text(dayjs().format("MMM-DD-YYYY, h:mm:ss"));
