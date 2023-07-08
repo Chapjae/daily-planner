@@ -39,10 +39,10 @@ $(function () {
   // attribute of each time-block be used to do this?
   // 
   for(var i = 9; i < 18; i++) {
-  var testTask = localStorage.getItem(`hour-${i}`)
-  var testHour = $(`#hour-${i}`).children(".description")
+  var getTask = localStorage.getItem(`hour-${i}`)
+  var getHour = $(`#hour-${i}`).children(".description")
 
-  testHour.append(testTask)
+  getHour.append(getTask)
 
   }
   // TODO: Add code to display the current date in the header of the page.
