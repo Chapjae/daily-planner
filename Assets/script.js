@@ -1,4 +1,4 @@
-currentHour = dayjs().format("h")
+currentHour = dayjs().format("H")
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
@@ -23,11 +23,11 @@ $(function () {
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
 
-  for(var i = 9; i < 18; i++){
-    var textarea=$(`#hour-${i}`) 
+  for (var i = 9; i < 18; i++) {
+    var textarea = $(`#hour-${i}`); 
     if (currentHour==i) {
       textarea.addClass("present");
-    } else if(currentHour > i){
+    } else if (currentHour > i) {
       textarea.addClass("past");
     } else {
       textarea.addClass("future");
