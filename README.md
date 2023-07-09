@@ -23,5 +23,5 @@ CSS <br>
 HTML <br>
 
 ## Links ##
-[Github Repo](https://github.com/Chapjae/daily-planner)
+[Github Repo](https://github.com/Chapjae/daily-planner) <br>
 [Deployed site](https://chapjae.github.io/daily-planner/)
